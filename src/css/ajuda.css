@@ -1,0 +1,42 @@
+.borda{
+    border: 2px, #659dd1, solid;
+}
+
+.texto{
+    text-align: justify;
+}
+
+.label_font{
+    font-family: 'Lato', sans-serif;
+    color: #737373;
+}
+
+p{
+    font-family: 'Balgin', sans-serif;
+    color: #737373;
+}
+
+.btn-1{
+    background-color: #214a7c;
+    color: white;
+    border-radius: 2rem;
+    border: 1px, #214a7c, solid;
+    font-family: 'Body Grotesque Large';
+}
+
+.fale-conosco h5{
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #214a7c;
+    font-family: 'Archivo Black';
+}
+
+.fale-conosco p{
+    font-size: 0.9rem;
+    color: #214a7c;
+    font-family: 'Garet';
+}
+
+.fale-conosco p img{
+    width: 1rem;
+}

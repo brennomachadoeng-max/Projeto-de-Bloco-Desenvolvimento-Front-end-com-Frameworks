@@ -1,0 +1,15 @@
+.selecionar-container {
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.card-medico {
+  border-radius: 12px;
+}
+
+.foto-medico {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}

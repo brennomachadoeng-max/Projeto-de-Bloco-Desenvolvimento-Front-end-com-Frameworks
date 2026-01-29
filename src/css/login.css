@@ -1,0 +1,36 @@
+.fundo-login {
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.font{
+    font-family: 'Open Sans';
+    color: #737373;
+}
+.label_font{
+    font-family: 'Lato', sans-serif;
+    color: #737373;
+}
+.btn-custom{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: #737373;
+    font-weight: 600;
+}
+.btn-custom:hover{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-color: green;
+    font-weight: 600;
+}
+.font_ou{
+    color: #737373;
+    font-family: 'Poppins', sans-serif;
+}
+
+.font_esqueci_senha{
+    font-size: 0.8rem;
+    font-family: 'HK Grotesk', sans-serif;
+    text-decoration: none;
+}

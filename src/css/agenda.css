@@ -1,0 +1,15 @@
+.agenda-container {
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.agenda-card {
+  border-radius: 12px;
+}
+
+.agenda-card h6 {
+  font-size: 1rem;
+}
+.agenda-card p {
+  font-size: 0.9rem;
+}

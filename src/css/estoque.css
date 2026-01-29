@@ -1,0 +1,13 @@
+.fundo-estoque {
+    background-image: url("../img/FundoLogin.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.btn-2{
+    color: white;
+    background-color: #659dd1;;
+}
+.btn-2:hover{
+    background-color: green;
+    color: white;
+}

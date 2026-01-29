@@ -1,0 +1,12 @@
+.agendar-container {
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.card {
+  border-radius: 12px !important;
+}
+
+form label {
+  font-size: 0.9rem;
+}

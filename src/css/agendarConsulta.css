@@ -1,12 +1,71 @@
-.agendar-container {
+.agendar-page {
   background: #f8f9fa;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
 }
 
-.card {
-  border-radius: 12px !important;
+.agendar-content {
+  width: 100%;
+  max-width: 500px;
 }
 
-form label {
+.title-agendar {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.info-medico {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.card-agendar {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.campo-grupo label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
   font-size: 0.9rem;
+}
+
+.input-custom {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.btn-confirmar {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-voltar {
+  background: transparent;
+  border: none;
+  color: #737373;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  text-decoration: underline;
 }

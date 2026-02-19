@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Menu from "../Menu";
+import '../../css/home.css';
 
 export default function Home({ consultas }) {
   const navigate = useNavigate();
@@ -16,56 +16,45 @@ export default function Home({ consultas }) {
     .sort((a, b) => a.dataHora - b.dataHora)[0];
 
   return (
-    <Container fluid className="p-0">
+    <div className="home-page">
       <Menu />
 
-      <Row className="g-4 p-3">
-        <h2 className="fw-bold">Bem-vindo ao MindCare</h2>
+      <div className="home-content">
+        <h2 className="font title-home">Bem-vindo ao MindCare</h2>
 
-        <Col md={4}>
-          <Card className="shadow-sm">
-            <Card.Body>
-              <Card.Title>Agenda</Card.Title>
-              <Button className="w-100" onClick={() => navigate("/Agenda")}>
-                Abrir Agenda
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
+        <div className="grid-cards">
+          <div className="home-card">
+            <h3 className="label_font card-title">Agenda</h3>
+            <button className="btn-custom" onClick={() => navigate("/Agenda")}>
+              Abrir Agenda
+            </button>
+          </div>
 
-        <Col md={4}>
-          <Card className="shadow-sm">
-            <Card.Body>
-              <Card.Title>Histórico</Card.Title>
-              <Button disabled className="w-100">
-                Em breve
-              </Button>
-            </Card.Body>
-          </Card>
-        </Col>
+          <div className="home-card">
+            <h3 className="label_font card-title">Histórico</h3>
+            <button className="btn-custom btn-disabled" disabled>
+              Em breve
+            </button>
+          </div>
 
-        <Col md={4}>
-          <Card className="shadow-sm">
-            <Card.Body>
-              <Card.Title>Próxima sessão</Card.Title>
-
+          <div className="home-card card-destaque">
+            <h3 className="label_font card-title">Próxima sessão</h3>
+            <div className="card-info">
               {proximaConsulta ? (
-                <>
-                  <p>
-                    <strong>Médico:</strong> {proximaConsulta.nome}<br />
-                    <strong>Data:</strong>{" "}
-                    {proximaConsulta.data.split("-").reverse().join("/")}
-                    <br />
-                    <strong>Hora:</strong> {proximaConsulta.horario}
-                  </p>
-                </>
+                <p className="label_font text-info">
+                  <strong>Médico:</strong> {proximaConsulta.nome}<br />
+                  <strong>Data:</strong>{" "}
+                  {proximaConsulta.data.split("-").reverse().join("/")}
+                  <br />
+                  <strong>Hora:</strong> {proximaConsulta.horario}
+                </p>
               ) : (
-                <p className="text-muted">Nenhuma sessão marcada</p>
+                <p className="font_ou">Nenhuma sessão marcada</p>
               )}
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

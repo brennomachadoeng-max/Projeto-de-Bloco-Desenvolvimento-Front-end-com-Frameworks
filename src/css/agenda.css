@@ -1,15 +1,60 @@
-.agenda-container {
+.agenda-page {
   background: #f8f9fa;
   min-height: 100vh;
 }
-
+.agenda-content {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.agenda-header {
+  margin-bottom: 2rem;
+}
+.title-agenda {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.agenda-controls {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 15px;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.control-item {
+  flex: 1;
+  min-width: 250px;
+}
+.control-actions {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  min-width: 250px;
+}
+.btn-secundario {
+  background-color: transparent !important;
+  border: 2px solid #737373 !important;
+  color: #737373 !important;
+}
+.btn-secundario:hover {
+  background-color: #737373 !important;
+  color: white !important;
+}
+.agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 .agenda-card {
+  background: white;
   border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
-
-.agenda-card h6 {
-  font-size: 1rem;
-}
-.agenda-card p {
-  font-size: 0.9rem;
+.text-center {
+    text-align: center;
+    margin-top: 3rem;
+    width: 100%;
 }

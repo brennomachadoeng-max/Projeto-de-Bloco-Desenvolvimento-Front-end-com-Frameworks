@@ -1,59 +1,63 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
 import CardConsultas from "./CardConsultas";
 import Menu from "../Menu";
 import { useNavigate } from "react-router-dom";
+import '../../css/agenda.css'; 
 
 function Agenda({ consultas, removerConsulta }) {
   const navigate = useNavigate();
 
   return (
-    <Container fluid className="agenda-container px-0">
+    <div className="agenda-page">
       <Menu />
 
-      <Row className="mb-3 p-3">
-        <Col>
-          <h2 className="fw-bold">Agenda</h2>
-          <p className="text-muted">Veja suas consultas e compromissos.</p>
-        </Col>
-      </Row>
+      <div className="agenda-content">
+        {/* Cabeçalho */}
+        <header className="agenda-header">
+          <h2 className="font title-agenda">Agenda</h2>
+          <p className="label_font">Veja suas consultas e compromissos.</p>
+        </header>
 
-      <Row className="mb-3 p-3">
-        <Col xs={12} md={4} className="mb-2">
-          <input type="date" className="form-control" />
-        </Col>
+        {/* Filtros e Ações */}
+        <div className="agenda-controls">
+          <div className="control-item">
+            <input type="date" className="input-custom" />
+          </div>
 
-        <Col xs={12} md={4} className="text-md-end d-flex flex-row">
-          <Button
-            variant="primary"
-            className="me-2 w-100 mb-2"
-            onClick={() => navigate("/SelecionarMedico")}
-          >
-            Nova Consulta
-          </Button>
+          <div className="control-actions">
+            <button
+              className="btn-custom"
+              onClick={() => navigate("/SelecionarMedico")}
+            >
+              Nova Consulta
+            </button>
 
-          <Button variant="outline-secondary" className="w-100">
-            Atualizar
-          </Button>
-        </Col>
-      </Row>
+            <button className="btn-custom btn-secundario">
+              Atualizar
+            </button>
+          </div>
+        </div>
 
-      {consultas.length === 0 ? (
-        <p className="text-muted text-center mt-4">
-          Nenhuma consulta agendada.
-        </p>
-      ) : (
-        consultas.map((consulta, index) => (
-          <CardConsultas
-            key={index}
-            nome={consulta.nome}
-            horario={consulta.horario}
-            status={consulta.status}
-            onCancelar={() => removerConsulta(index)}
-          />
-        ))
-      )}
-    </Container>
+        {/* Lista de Consultas */}
+        <div className="agenda-list">
+          {consultas.length === 0 ? (
+            <p className="font_ou text-center">
+              Nenhuma consulta agendada.
+            </p>
+          ) : (
+            consultas.map((consulta, index) => (
+              <CardConsultas
+                key={index}
+                nome={consulta.nome}
+                horario={consulta.horario}
+                status={consulta.status}
+                onCancelar={() => removerConsulta(index)}
+              />
+            ))
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 

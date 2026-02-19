@@ -1,20 +1,18 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/staly.css';
 import '../css/login.css';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 function Login() {
     const [erro, setErro] = useState("");
 
     return (
-        <div className='fundo-login d-flex align-items-center justify-content-center vh-100'>
-            <div className="card shadow-lg p-4 rounded-3" style={{ width: "22rem", height: "30rem" }}>
-                <h3 className="text-center mb-4 font fs-1 fw-bold">Login</h3>
+        <div className='fundo-login'>
+            <div className="card-login">
+                <h3 className="font title-login">Login</h3>
                 <Formulario setErro={setErro} /> 
                 {erro && (
-                    <div className="alert alert-danger mt-3 py-2 small">
+                    <div className="erro-mensagem">
                         {erro}
                     </div>
                 )}
@@ -22,7 +20,6 @@ function Login() {
         </div>
     );
 }
-
 
 function Formulario({ setErro }){
     const [email, setEmail] = useState("");
@@ -43,12 +40,12 @@ function Formulario({ setErro }){
     };
 
     return(
-        <form onSubmit={handleSubmit} className="d-flex flex-column">
-            <div className="mb-3 label_font">
-                <label htmlFor="email" className="form-label fw-bold">E-mail</label>
+        <form onSubmit={handleSubmit} className="form-container">
+            <div className="campo-grupo label_font">
+                <label htmlFor="email">E-mail</label>
                 <input
                     type="email"
-                    className="form-control"
+                    className="input-custom"
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -56,11 +53,11 @@ function Formulario({ setErro }){
                 />
             </div>
 
-            <div className="mb-1 label_font">
-                <label htmlFor="senha" className="form-label fw-bold">Senha</label>
+            <div className="campo-grupo label_font">
+                <label htmlFor="senha">Senha</label>
                 <input
                     type="password"
-                    className="form-control"
+                    className="input-custom"
                     id="senha"
                     value={senha}
                     onChange={(e) => setSenha(e.target.value)}
@@ -68,7 +65,13 @@ function Formulario({ setErro }){
                 />
             </div>
 
-            <button type="submit" className="btn-custom btn w-100 mb-1 mt-2">Entrar</button>
+            <a href="/ajuda" className="font_esqueci_senha">Esqueci minha senha</a>
+
+            <button type="submit" className="btn-custom">Entrar</button>
+            
+            <p className="font_ou">ou</p>
+            
+            <a href="/register" className="btn-custom btn-link">Criar conta</a>
         </form>
     );
 }

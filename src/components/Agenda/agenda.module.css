@@ -1,0 +1,101 @@
+.agendaPage {
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.agendaContent {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.agendaHeader {
+  margin-bottom: 2rem;
+}
+
+.titleAgenda {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.agendaControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controlItem {
+  flex: 1;
+  min-width: 250px;
+}
+
+.controlActions {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  min-width: 250px;
+}
+
+/* INPUT */
+.inputCustom {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+/* BOTÃO PADRÃO */
+.btnCustom {
+  padding: 0.6rem 1.3rem;
+  border-radius: 25px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background: #4caf50;
+  color: white;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+/* HOVER BOTÃO */
+.btnCustom:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* BOTÃO SECUNDÁRIO */
+.btnSecundario {
+  background: white;
+  border: 2px solid #737373;
+  color: #737373;
+}
+
+.btnSecundario:hover {
+  background: #737373;
+  color: white;
+}
+
+/* LISTA */
+.agendaList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.agendaCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.textCenter {
+  text-align: center;
+  margin-top: 3rem;
+  width: 100%;
+}

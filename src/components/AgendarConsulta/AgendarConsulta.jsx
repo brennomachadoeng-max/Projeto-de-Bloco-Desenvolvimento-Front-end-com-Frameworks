@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "../../css/agendarConsulta.css";
-import "../../css/staly.css";
+
+import style from "./agendarConsulta.module.css";
 
 export default function AgendarConsulta({ adicionarConsulta }) {
   const navigate = useNavigate();
@@ -32,38 +32,40 @@ export default function AgendarConsulta({ adicionarConsulta }) {
       observacao,
       status: "Confirmada",
     };
-    
+
     adicionarConsulta(novaConsulta);
     navigate("/Agenda");
   }
 
   return (
-    <div className="agendar-page">
-      <div className="agendar-content">
-        <h3 className="font title-agendar">Agendar Consulta</h3>
+    <div className={style.agendarPage}>
+      <div className={style.agendarContent}>
+        <h3 className={style.titleAgendar}>
+          Agendar Consulta
+        </h3>
 
-        <p className="label_font info-medico">
-          Profissional selecionado: 
+        <p className={style.infoMedico}>
+          Profissional selecionado:
           <strong> {medico.nome}</strong>
         </p>
 
-        <div className="card-agendar">
-          <div className="campo-grupo label_font">
+        <div className={style.cardAgendar}>
+          <div className={style.campoGrupo}>
             <label htmlFor="data">Data da consulta</label>
             <input
               id="data"
               type="date"
-              className="input-custom"
+              className={style.inputCustom}
               value={data}
               onChange={(e) => setData(e.target.value)}
             />
           </div>
 
-          <div className="campo-grupo label_font">
+          <div className={style.campoGrupo}>
             <label htmlFor="horario">Horário</label>
             <select
               id="horario"
-              className="input-custom"
+              className={style.inputCustom}
               value={horario}
               onChange={(e) => setHorario(e.target.value)}
             >
@@ -75,11 +77,11 @@ export default function AgendarConsulta({ adicionarConsulta }) {
             </select>
           </div>
 
-          <div className="campo-grupo label_font">
+          <div className={style.campoGrupo}>
             <label htmlFor="tipo">Tipo de consulta</label>
             <select
               id="tipo"
-              className="input-custom"
+              className={style.inputCustom}
               value={tipo}
               onChange={(e) => setTipo(e.target.value)}
             >
@@ -89,11 +91,11 @@ export default function AgendarConsulta({ adicionarConsulta }) {
             </select>
           </div>
 
-          <div className="campo-grupo label_font">
+          <div className={style.campoGrupo}>
             <label htmlFor="obs">Observações</label>
             <textarea
               id="obs"
-              className="input-custom"
+              className={style.inputCustom}
               rows={3}
               value={observacao}
               onChange={(e) => setObservacao(e.target.value)}
@@ -102,14 +104,14 @@ export default function AgendarConsulta({ adicionarConsulta }) {
           </div>
 
           <button
-            className="btn-custom btn-confirmar"
+            className={style.btnConfirmar}
             onClick={confirmarAgendamento}
           >
             Confirmar Agendamento
           </button>
-          
-          <button 
-            className="btn-voltar" 
+
+          <button
+            className={style.btnVoltar}
             onClick={() => navigate(-1)}
           >
             Voltar

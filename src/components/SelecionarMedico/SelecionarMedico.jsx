@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { buscarMedicos } from "../../api/selecionarMedico.api";
-import "../../css/selecionarMedico.css";
-import "../../css/staly.css";
+
+import style from "./selecionarMedico.module.css";
 
 export default function SelecionarMedico() {
   const [medicos, setMedicos] = useState([]);
@@ -14,22 +14,25 @@ export default function SelecionarMedico() {
 
   if (carregando) {
     return (
-      <div className="loading-container">
-        <div className="spinner-custom"></div>
-        <p className="label_font">Carregando profissionais...</p>
+      <div className={style.loadingContainer}>
+        <div className={style.spinnerCustom}></div>
+        <p>Carregando profissionais...</p>
       </div>
     );
   }
 
   return (
-    <div className="selecionar-page">
-      <div className="selecionar-content">
-        <h3 className="font title-selecionar">Escolher Profissional</h3>
-        <p className="label_font subtitle-selecionar">
+    <div className={style.selecionarPage}>
+      <div className={style.selecionarContent}>
+        <h3 className={style.titleSelecionar}>
+          Escolher Profissional
+        </h3>
+
+        <p className={style.subtitleSelecionar}>
           Selecione o profissional para realizar a consulta.
         </p>
 
-        <div className="medicos-list">
+        <div className={style.medicosList}>
           {medicos.map((medico) => (
             <CardSelecionarMedico key={medico.id} medico={medico} />
           ))}
@@ -47,27 +50,28 @@ function CardSelecionarMedico({ medico }) {
   }
 
   return (
-    <div className="card-medico-custom">
-      <div className="medico-info-wrapper">
-        <div className="avatar-wrapper">
+    <div className={style.cardMedicoCustom}>
+      <div className={style.medicoInfoWrapper}>
+        <div className={style.avatarWrapper}>
           <img
             src={medico.foto}
             alt={medico.nome}
-            className="foto-medico"
+            className={style.fotoMedico}
           />
-          <span className="status-indicator"></span>
+          <span className={style.statusIndicator}></span>
         </div>
 
-        <div className="medico-details">
-          <div className="medico-header">
-            <h6 className="font nome-medico">{medico.nome}</h6>
-            <p className="label_font espec-medico">{medico.especialidade}</p>
+        <div className={style.medicoDetails}>
+          <div>
+            <h6 className={style.nomeMedico}>{medico.nome}</h6>
+            <p className={style.especMedico}>{medico.especialidade}</p>
           </div>
-          
-          <div className="medico-footer">
-            <span className="crm-badge">CRM Ativo</span>
+
+          <div className={style.medicoFooter}>
+            <span className={style.crmBadge}>CRM Ativo</span>
+
             <button
-              className="btn-custom btn-selecionar"
+              className={style.btnSelecionar}
               onClick={selecionarMedico}
             >
               Selecionar

@@ -1,47 +1,50 @@
 import React from "react";
 import CardConsultas from "./CardConsultas";
-import Menu from "../Menu";
+import Menu from "../Menu/Menu";
 import { useNavigate } from "react-router-dom";
-import '../../css/agenda.css'; 
+
+import style from "./agenda.module.css";
 
 function Agenda({ consultas, removerConsulta }) {
   const navigate = useNavigate();
 
   return (
-    <div className="agenda-page">
+    <div className={style.agendaPage}>
       <Menu />
 
-      <div className="agenda-content">
+      <div className={style.agendaContent}>
         {/* Cabeçalho */}
-        <header className="agenda-header">
-          <h2 className="font title-agenda">Agenda</h2>
-          <p className="label_font">Veja suas consultas e compromissos.</p>
+        <header className={style.agendaHeader}>
+          <h2 className={style.titleAgenda}>Agenda</h2>
+          <p className={style.labelFont}>
+            Veja suas consultas e compromissos.
+          </p>
         </header>
 
         {/* Filtros e Ações */}
-        <div className="agenda-controls">
-          <div className="control-item">
-            <input type="date" className="input-custom" />
+        <div className={style.agendaControls}>
+          <div className={style.controlItem}>
+            <input type="date" className={style.inputCustom} />
           </div>
 
-          <div className="control-actions">
+          <div className={style.controlActions}>
             <button
-              className="btn-custom"
+              className={style.btnCustom}
               onClick={() => navigate("/SelecionarMedico")}
             >
               Nova Consulta
             </button>
 
-            <button className="btn-custom btn-secundario">
+            <button className={`${style.btnCustom} ${style.btnSecundario}`}>
               Atualizar
             </button>
           </div>
         </div>
 
         {/* Lista de Consultas */}
-        <div className="agenda-list">
+        <div className={style.agendaList}>
           {consultas.length === 0 ? (
-            <p className="font_ou text-center">
+            <p className={`${style.fontOu} ${style.textCenter}`}>
               Nenhuma consulta agendada.
             </p>
           ) : (

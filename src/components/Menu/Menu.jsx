@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "../css/home.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Menu() {

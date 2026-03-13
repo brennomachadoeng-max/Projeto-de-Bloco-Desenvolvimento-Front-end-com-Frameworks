@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Menu from "../Menu";
-import '../../css/home.css';
+import Menu from "../Menu/Menu";
+import style from "./home.module.css";
 
 export default function Home({ consultas }) {
   const navigate = useNavigate();
@@ -16,40 +16,48 @@ export default function Home({ consultas }) {
     .sort((a, b) => a.dataHora - b.dataHora)[0];
 
   return (
-    <div className="home-page">
+    <div className={style.homePage}>
       <Menu />
 
-      <div className="home-content">
-        <h2 className="font title-home">Bem-vindo ao MindCare</h2>
+      <div className={style.homeContent}>
+        <h2 className={`${style.titleHome}`}>Bem-vindo ao MindCare</h2>
 
-        <div className="grid-cards">
-          <div className="home-card">
-            <h3 className="label_font card-title">Agenda</h3>
-            <button className="btn-custom" onClick={() => navigate("/Agenda")}>
+        <div className={style.gridCards}>
+          <div className={style.homeCard}>
+            <h3 className={style.cardTitle}>Agenda</h3>
+            <button
+              className={style.btnCustom}
+              onClick={() => navigate("/Agenda")}
+            >
               Abrir Agenda
             </button>
           </div>
 
-          <div className="home-card">
-            <h3 className="label_font card-title">Histórico</h3>
-            <button className="btn-custom btn-disabled" disabled>
+          <div className={style.homeCard}>
+            <h3 className={style.cardTitle}>Histórico</h3>
+            <button
+              className={`${style.btnCustom} ${style.btnDisabled}`}
+              disabled
+            >
               Em breve
             </button>
           </div>
 
-          <div className="home-card card-destaque">
-            <h3 className="label_font card-title">Próxima sessão</h3>
-            <div className="card-info">
+          <div className={`${style.homeCard} ${style.cardDestaque}`}>
+            <h3 className={style.cardTitle}>Próxima sessão</h3>
+
+            <div className={style.cardInfo}>
               {proximaConsulta ? (
-                <p className="label_font text-info">
-                  <strong>Médico:</strong> {proximaConsulta.nome}<br />
+                <p className={style.textInfo}>
+                  <strong>Médico:</strong> {proximaConsulta.nome}
+                  <br />
                   <strong>Data:</strong>{" "}
                   {proximaConsulta.data.split("-").reverse().join("/")}
                   <br />
                   <strong>Hora:</strong> {proximaConsulta.horario}
                 </p>
               ) : (
-                <p className="font_ou">Nenhuma sessão marcada</p>
+                <p>Nenhuma sessão marcada</p>
               )}
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import CardConsultas from "./CardConsultas";
+import CardConsultas from "./CardConsultas/CardConsultas";
 import Menu from "../Menu/Menu";
 import { useNavigate } from "react-router-dom";
 

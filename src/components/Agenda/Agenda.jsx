@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CardConsultas from "./CardConsultas/CardConsultas";
 import Menu from "../Menu/Menu";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,12 @@ import style from "./agenda.module.css";
 
 function Agenda({ consultas, removerConsulta }) {
   const navigate = useNavigate();
+  const [filtroData, setFiltroData] = useState("");
+
+  const consultasFiltradas = consultas.filter((consulta) => {
+    if (!filtroData) return true;
+    return consulta.data === filtroData;
+  });
 
   return (
     <div className={style.agendaPage}>
@@ -21,39 +27,38 @@ function Agenda({ consultas, removerConsulta }) {
           </p>
         </header>
 
-        {/* Filtros e Ações */}
+        {/* Filtro e botão */}
         <div className={style.agendaControls}>
-          <div className={style.controlItem}>
-            <input type="date" className={style.inputCustom} />
-          </div>
+          <input
+            type="date"
+            className={style.inputCustom}
+            value={filtroData}
+            onChange={(e) => setFiltroData(e.target.value)}
+          />
 
-          <div className={style.controlActions}>
-            <button
-              className={style.btnCustom}
-              onClick={() => navigate("/SelecionarMedico")}
-            >
-              Nova Consulta
-            </button>
-
-            <button className={`${style.btnCustom} ${style.btnSecundario}`}>
-              Atualizar
-            </button>
-          </div>
+          <button
+            className={style.btnCustom}
+            onClick={() => navigate("/SelecionarMedico")}
+          >
+            + Nova Consulta
+          </button>
         </div>
 
         {/* Lista de Consultas */}
         <div className={style.agendaList}>
-          {consultas.length === 0 ? (
-            <p className={`${style.fontOu} ${style.textCenter}`}>
+          {consultasFiltradas.length === 0 ? (
+            <p className={style.textCenter}>
               Nenhuma consulta agendada.
             </p>
           ) : (
-            consultas.map((consulta, index) => (
+            consultasFiltradas.map((consulta, index) => (
               <CardConsultas
                 key={index}
                 nome={consulta.nome}
+                data={consulta.data}
                 horario={consulta.horario}
                 status={consulta.status}
+                observacao={consulta.observacao}
                 onCancelar={() => removerConsulta(index)}
               />
             ))

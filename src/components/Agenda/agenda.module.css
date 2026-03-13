@@ -9,6 +9,7 @@
   margin: 0 auto;
 }
 
+/* HEADER */
 .agendaHeader {
   margin-bottom: 2rem;
 }
@@ -19,74 +20,69 @@
   margin-bottom: 0.5rem;
 }
 
+/* CONTROLES */
 .agendaControls {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   gap: 15px;
   margin-bottom: 2rem;
-  align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.controlItem {
-  flex: 1;
-  min-width: 250px;
-}
-
-.controlActions {
-  display: flex;
-  gap: 10px;
-  flex: 1;
-  min-width: 250px;
-}
-
-/* INPUT */
+/* INPUT DATA */
 .inputCustom {
-  padding: 0.6rem 0.8rem;
-  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
   border: 1px solid #ddd;
   font-size: 0.9rem;
+  min-width: 200px;
+  background: white;
+  transition: all 0.2s ease;
 }
 
-/* BOTÃO PADRÃO */
+.inputCustom:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76,175,80,0.15);
+}
+
+/* BOTÃO NOVA CONSULTA */
 .btnCustom {
-  padding: 0.6rem 1.3rem;
-  border-radius: 25px;
+  padding: 0.65rem 1.6rem;
+  border-radius: 30px;
   border: none;
   font-size: 0.9rem;
   cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  background: #4caf50;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  background: linear-gradient(135deg,#4caf50,#43a047);
   color: white;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  letter-spacing: 0.3px;
 }
 
-/* HOVER BOTÃO */
+/* HOVER */
 .btnCustom:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  background: linear-gradient(135deg,#43a047,#388e3c);
 }
 
-/* BOTÃO SECUNDÁRIO */
-.btnSecundario {
-  background: white;
-  border: 2px solid #737373;
-  color: #737373;
+/* ACTIVE */
+.btnCustom:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
-.btnSecundario:hover {
-  background: #737373;
-  color: white;
-}
-
-/* LISTA */
+/* LISTA DE CONSULTAS */
 .agendaList {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+/* CARD */
 .agendaCard {
   background: white;
   border-radius: 12px;
@@ -94,6 +90,7 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+/* TEXTO CENTRAL */
 .textCenter {
   text-align: center;
   margin-top: 3rem;

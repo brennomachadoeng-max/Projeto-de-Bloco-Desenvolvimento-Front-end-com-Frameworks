@@ -5,7 +5,7 @@ export function buscarMedicos(setMedicos, setCarregando) {
         const medicosFormatados = data.results.map((user, index) => ({
           id: user.login.uuid,
           nome: `${user.name.first} ${user.name.last}`,
-          foto: user.picture.medium, // Guardamos a URL da foto
+          foto: user.picture.medium,
           especialidade: index % 2 === 0 ? "Psicólogo Clínico" : "Psiquiatra"
         }));
         
@@ -17,3 +17,17 @@ export function buscarMedicos(setMedicos, setCarregando) {
         setCarregando(false);
       });
 }
+
+//Caso a api nao esteja funcionando, pode usar os dados locais abaixo para teste.
+/*
+export function buscarMedicos(setMedicos, setCarregando) {
+  // Simula um atraso de rede
+  setTimeout(() => {
+    const dadosLocais = [
+      { id: 1, nome: "Dr. Brenno Machado", foto: "https://avatar.iran.liara.run/public/1", especialidade: "Psicólogo Clínico" },
+      { id: 2, nome: "Dra. Maria Silva", foto: "https://avatar.iran.liara.run/public/50", especialidade: "Psiquiatra" }
+    ];
+    setMedicos(dadosLocais);
+    setCarregando(false);
+  }, 500); 
+}*/

@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Agenda from "./components/Agenda/Agenda";
 import AgendarConsulta from "./components/AgendarConsulta/AgendarConsulta";
 import Home from "./components/Home/Home";
-import Login from "./components/Login";
-import Registrar from "./components/Registrar";
+import Login from "./components/Login/Login";
+import Registrar from "./components/Registrar/Registrar";
 import SelecionarMedico from "./components/SelecionarMedico/SelecionarMedico";
 
 function App() {

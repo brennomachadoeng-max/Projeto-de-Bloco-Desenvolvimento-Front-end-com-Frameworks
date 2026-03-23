@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f0f2f5; /* Ou a cor que você usava no staly.css */
+    background-color: rgb(119, 119, 119);
 }
 
 .cardRegistro {

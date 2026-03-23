@@ -19,7 +19,6 @@ function Agenda({ consultas, removerConsulta }) {
       <Menu />
 
       <div className={style.agendaContent}>
-        {/* Cabeçalho */}
         <header className={style.agendaHeader}>
           <h2 className={style.titleAgenda}>Agenda</h2>
           <p className={style.labelFont}>
@@ -27,7 +26,6 @@ function Agenda({ consultas, removerConsulta }) {
           </p>
         </header>
 
-        {/* Filtro e botão */}
         <div className={style.agendaControls}>
           <input
             type="date"
@@ -36,15 +34,16 @@ function Agenda({ consultas, removerConsulta }) {
             onChange={(e) => setFiltroData(e.target.value)}
           />
 
-          <button
-            className={style.btnCustom}
-            onClick={() => navigate("/SelecionarMedico")}
-          >
-            + Nova Consulta
-          </button>
+          {localStorage.getItem("tipoUsuario") === "paciente" && (
+            <button
+              className={style.btnCustom}
+              onClick={() => navigate("/SelecionarMedico")}
+            >
+              + Nova Consulta
+            </button>
+          )}
         </div>
 
-        {/* Lista de Consultas */}
         <div className={style.agendaList}>
           {consultasFiltradas.length === 0 ? (
             <p className={style.textCenter}>

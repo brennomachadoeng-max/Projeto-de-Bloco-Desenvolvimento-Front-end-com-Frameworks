@@ -22,7 +22,6 @@ function FormularioRegistrar({ setErroGeral }) {
     const [senha, setSenha] = useState("");
     const [tipoUsuario, setTipoUsuario] = useState("paciente"); 
     const [erroLocal, setErroLocal] = useState(null); 
-    
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {

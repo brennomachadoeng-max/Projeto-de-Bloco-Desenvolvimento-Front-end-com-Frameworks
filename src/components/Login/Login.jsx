@@ -34,13 +34,9 @@ function Formulario({ setErro }){
             const usuario = JSON.parse(dadosCadastrados);
 
             if (email === usuario.email && senha === usuario.senha) {
-                
                 localStorage.setItem("usuarioLogado", "true");
                 localStorage.setItem("nomeUsuario", usuario.nome);
-                localStorage.setItem("tipoUsuario", usuario.tipoUsuario); 
-
-                console.log("Login realizado com sucesso como:", usuario.tipoUsuario);
-                
+                localStorage.setItem("tipoUsuario", usuario.tipoUsuario);                 
                 navigate("/Home"); 
             } else {
                 setErro("E-mail ou senha incorretos.");

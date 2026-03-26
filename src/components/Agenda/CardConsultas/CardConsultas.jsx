@@ -23,7 +23,6 @@ export default function CardConsultas({ nome, data, horario, status, observacao,
           Data: <strong>{formatarData(data)}</strong>
         </p>
 
-        {/* INFORMAÇÕES EXTRAS */}
         {aberto && (
           <div className="mt-2 border-top pt-2">
             <p className="mb-1">

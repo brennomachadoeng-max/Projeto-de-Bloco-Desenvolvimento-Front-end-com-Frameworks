@@ -9,7 +9,6 @@
   margin: 0 auto;
 }
 
-/* HEADER */
 .agendaHeader {
   margin-bottom: 2rem;
 }
@@ -20,7 +19,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* CONTROLES */
 .agendaControls {
   display: flex;
   justify-content: space-between;
@@ -30,7 +28,6 @@
   flex-wrap: wrap;
 }
 
-/* INPUT DATA */
 .inputCustom {
   padding: 0.65rem 0.9rem;
   border-radius: 10px;
@@ -47,7 +44,6 @@
   box-shadow: 0 0 0 3px rgba(76,175,80,0.15);
 }
 
-/* BOTÃO NOVA CONSULTA */
 .btnCustom {
   padding: 0.65rem 1.6rem;
   border-radius: 30px;
@@ -62,27 +58,23 @@
   letter-spacing: 0.3px;
 }
 
-/* HOVER */
 .btnCustom:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.18);
   background: linear-gradient(135deg,#43a047,#388e3c);
 }
 
-/* ACTIVE */
 .btnCustom:active {
   transform: translateY(0);
   box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
-/* LISTA DE CONSULTAS */
 .agendaList {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* CARD */
 .agendaCard {
   background: white;
   border-radius: 12px;
@@ -90,7 +82,6 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* TEXTO CENTRAL */
 .textCenter {
   text-align: center;
   margin-top: 3rem;

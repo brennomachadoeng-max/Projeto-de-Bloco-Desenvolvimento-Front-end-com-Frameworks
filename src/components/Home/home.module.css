@@ -1,73 +1,115 @@
 .homePage {
-    background-color: #f4f4f4;
-    min-height: 100vh;
+  background-color: #f4f4f4;
+  min-height: 100vh;
 }
 
 .homeContent {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .titleHome {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #333;
 }
 
 .gridCards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .homeCard {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 180px;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
 }
 
 .homeCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .cardTitle {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: #333;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 600;
 }
 
 .cardInfo {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .textInfo {
-    font-size: 0.95rem;
-    line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
 }
 
 .btnCustom {
-    border: none;
-    padding: 0.6rem;
-    border-radius: 6px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  background-color: #4caf50;
+  color: white;
+  transition: 0.2s;
+}
+
+.btnCustom:not(.btnDisabled):hover {
+  background-color: #43a047;
 }
 
 .btnDisabled {
-    background-color: #ccc !important;
-    cursor: not-allowed;
+  background-color: #ccc !important;
+  cursor: not-allowed;
+  color: #666;
 }
 
 .cardDestaque {
-    border-left: 5px solid green;
+  border-left: 6px solid #4caf50;
+}
+
+@media (max-width: 768px) {
+  .homeContent {
+    padding: 1.5rem;
+  }
+
+  .titleHome {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .gridCards {
+    grid-template-columns: 1fr; 
+  }
+
+  .homeCard {
+    min-height: auto; 
+    padding: 1.2rem;
+  }
+
+  .titleHome {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btnCustom {
+    width: 100%; 
+    padding: 1rem;
+  }
 }

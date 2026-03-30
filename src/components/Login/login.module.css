@@ -1,19 +1,21 @@
 .fundoLogin {
-    background-color: rgb(119, 119, 119);
+    background-color: #777777;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh; 
     display: flex;
     align-items: center; 
     justify-content: center;
+    padding: 20px; 
 }
 
 .cardLogin {
     background-color: white;
-    width: 22rem;
-    height: 30rem;
-    padding: 2rem;
+    width: 100%;
+    max-width: 22rem;
+    min-height: 30rem;
+    padding: 2.5rem 2rem;
     border-radius: 1rem; 
     box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
     display: flex;
@@ -25,6 +27,7 @@
     margin-bottom: 1.5rem;
     font-size: 2.5rem; 
     font-weight: bold;
+    color: #333;
 }
 
 .formContainer {
@@ -39,21 +42,18 @@
 }
 
 .inputCustom {
-    padding: 0.5rem;
+    padding: 0.7rem;
     border: 1px solid #ccc;
-    border-radius: 0.3rem;
-    margin-top: 0.2rem;
-}
-
-.font {
-    font-family: 'Open Sans', sans-serif;
-    color: #737373;
+    border-radius: 0.5rem;
+    margin-top: 0.3rem;
+    font-size: 1rem;
 }
 
 .labelFont {
     font-family: 'Lato', sans-serif;
     color: #737373;
     font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .btnCustom {
@@ -61,18 +61,17 @@
     color: white;
     background-color: #737373;
     font-weight: 600;
-    padding: 0.8rem;
+    padding: 0.9rem;
     border: none;
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     cursor: pointer;
     width: 100%;
     margin-top: 1rem;
-    text-align: center;
-    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
 .btnCustom:hover {
-    background-color: green;
+    background-color: #4caf50; 
 }
 
 .btnLink {
@@ -84,15 +83,15 @@
     color: #737373;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    margin: 0.5rem 0;
+    margin: 0.8rem 0;
 }
 
 .fontEsqueciSenha {
-    font-size: 0.8rem;
-    font-family: 'HK Grotesk', sans-serif;
+    font-size: 0.85rem;
     text-decoration: none;
     color: #737373;
     align-self: flex-end;
+    margin-top: -0.5rem;
 }
 
 .erroMensagem {
@@ -103,4 +102,24 @@
     margin-top: 1rem;
     font-size: 0.85rem;
     text-align: center;
+    border: 1px solid #f5c6cb;
+}
+
+@media (max-width: 480px) {
+    .cardLogin {
+        padding: 1.5rem;
+        min-height: auto; 
+    }
+
+    .titleLogin {
+        font-size: 2rem;
+    }
+
+    .inputCustom {
+        padding: 0.8rem;
+    }
+
+    .btnCustom {
+        padding: 1rem;
+    }
 }
